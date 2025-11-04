@@ -11,29 +11,28 @@
   <div class="container">
     <div class="header-inner">
       <div class="brand">
-        <img src="../imagens/logo.png" alt="Logo ONG Conecta" width="50" width="50">
+        <img src="../imagens/ongconecta.png" alt="Logo ONG Conecta">
         <h1>ONG Conecta</h1>
       </div>
       <nav>
         <ul>
-          <li><a href="index.html">Inicio</a></li>
+          <li><a href="index.html">Início</a></li>
           <li><a href="projetos.html">Projetos</a></li>
           <li><a href="cadastro.html">Cadastro</a></li>
         </ul>
         <div class="hamburger"><span></span><span></span><span></span></div>
       </nav>
-      <div class="mobile-menu">
-      </div>
+      <div class="mobile-menu"></div>
     </div>
   </div>
 </header>
 
 <main>
   <section class="container mt-24">
-    <h1>Cadastro de Voluntario / Doador</h1>
+    <h1>Cadastro de Voluntário / Doador</h1>
     <form id="formCadastro">
       <fieldset>
-        <legend>Informacoes Pessoais</legend>
+        <legend>Informações Pessoais</legend>
         <div class="field-row">
           <div class="form-group">
             <label for="nome">Nome Completo</label>
@@ -61,7 +60,7 @@
       </fieldset>
 
       <fieldset>
-        <legend>Endereco</legend>
+        <legend>Endereço</legend>
         <div class="field-row">
           <div class="form-group">
             <label for="cep">CEP</label>
@@ -77,7 +76,7 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="endereco">Endereco</label>
+          <label for="endereco">Endereço</label>
           <input type="text" id="endereco" name="endereco" required>
         </div>
       </fieldset>
@@ -93,38 +92,6 @@
   </div>
 </footer>
 
-<script>
-  const btn = document.querySelector('.hamburger');
-  const mobile = document.querySelector('.mobile-menu');
-  btn.addEventListener('click', () => mobile.classList.toggle('open'));
-
-  // Mascaras simples
-  const cpfInput = document.getElementById('cpf');
-  cpfInput.addEventListener('input', e => {
-    let v = e.target.value.replace(/\D/g,'');
-    v=v.replace(/(\d{3})(\d)/,'$1.$2');
-    v=v.replace(/(\d{3})(\d)/,'$1.$2');
-    v=v.replace(/(\d{3})(\d{1,2})$/,'$1-$2');
-    e.target.value = v;
-  });
-
-  const telInput = document.getElementById('telefone');
-  telInput.addEventListener('input', e => {
-    let v = e.target.value.replace(/\D/g,'');
-    v=v.replace(/^(\d{2})(\d)/g,'($1) $2');
-    v=v.replace(/(\d{5})(\d)/,'$1-$2');
-    e.target.value = v;
-  });
-
-  const cepInput = document.getElementById('cep');
-  cepInput.addEventListener('input', e => {
-    let v = e.target.value.replace(/\D/g,'');
-    v=v.replace(/(\d{5})(\d)/,'$1-$2');
-    e.target.value = v;
-  });
-</script>
 <script src="../js/main.js"></script>
-<script src="../js/spa.js"></script>
-<script src="../js/formValidation.js"></script>
 </body>
 </html>
