@@ -1,2 +1,2 @@
-# projeto-ong-segunda-parte
+# projeto-ong-terceira-parte
 olá, esse é a continuação do meu projeto
