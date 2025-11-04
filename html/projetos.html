@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ONG Conecta - Projetos</title>
+  <link rel="stylesheet" href="../css/ong-style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <div class="brand">
+        <img src="../imagens/ongconecta.png" alt="Logo ONG Conecta" width="50">
+        <h1>ONG Conecta</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+        </ul>
+        <div class="hamburger"><span></span><span></span><span></span></div>
+      </nav>
+      <div class="mobile-menu">
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="container mt-24">
+    <h1>Projetos Sociais</h1>
+    <p>Descubra como participar do voluntariado e apoiar nossos projetos.</p>
+    <div class="cards-grid mt-16">
+      <article class="card">
+        <img src="../imagens/educaçao.jpg" alt="Voluntariado">
+        <div class="card-body">
+          <h3 class="card-title">Voluntariado</h3>
+          <p>Participe das atividades e ajude a transformar vidas.</p>
+          <span class="badge badge-success">Aberto</span>
+        </div>
+      </article>
+      <article class="card">
+        <img src="../imagens/projetos.jpg" alt="Projetos em execucao" width="50" width="50">
+        <div class="card-body">
+          <h3 class="card-title">Projetos em Execucao</h3>
+          <p>Veja os resultados e impactos dos projetos apoiados.</p>
+          <span class="badge badge-info">Em andamento</span>
+        </div>
+      </article>
+      <article class="card">
+        <img src="../imagens/solidariedaden.jfif" alt="Doacoes">
+        <div class="card-body">
+          <h3 class="card-title">Doacoes</h3>
+          <p>Contribua com doacoes e ajude a manter os projetos ativos.</p>
+          <span class="badge badge-dark">Disponivel</span>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; 2025 ONG Conecta - Todos os direitos reservados</p>
+  </div>
+</footer>
+
+<script>
+  const btn = document.querySelector('.hamburger');
+  const mobile = document.querySelector('.mobile-menu');
+  btn.addEventListener('click', () => mobile.classList.toggle('open'));
+</script>
+</body>
+</html>
