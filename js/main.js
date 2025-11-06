@@ -1,4 +1,4 @@
-// main.js - ONG Conecta (versão acessível)
+// main.min.js - ONG Conecta (versão acessível)
 
 document.addEventListener("DOMContentLoaded", () => {
 

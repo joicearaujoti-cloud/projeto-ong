@@ -15,23 +15,23 @@ ong-conecta/
 │   └── projetos.html
 │   └── cadastro.html
 ├── css/
-│   └── ong-style.css
+│   └── ong-style.min.css
 ├── imagens/
         (arquivos de imagem)
 └── js/
-    └── main.js
+    └── main.min.js
 ```
 
 ## 🧭 Referências de caminho (exemplos para `<head>` e `<body>` no `html/index.html`)
 
 No topo do seu `html/index.html` inclua o CSS assim:
 ```html
-<link rel="stylesheet" href="../css/ong-style.css">
+<link rel="stylesheet" href="../css/ong-style.min.css">
 ```
 
 No final do `body` inclua o JavaScript assim:
 ```html
-<script src="../js/main.js"></script>
+<script src="../js/main.min.js"></script>
 ```
 
 Para imagens (por exemplo dentro de `html/index.html`):
@@ -72,8 +72,8 @@ Abra `http://localhost:8080/html/index.html` (ou a porta mostrada pelo comando).
 
 ## ✅ Checklist de verificação (se algo não carregar)
 
-1. Caminho do CSS no `<head>` deve ser `../css/ong-style.css` (relativo ao `html/`).  
-2. Caminho do JS antes de `</body>` deve ser `../js/main.js`.  
+1. Caminho do CSS no `<head>` deve ser `../css/ong-style.min.css` (relativo ao `html/`).  
+2. Caminho do JS antes de `</body>` deve ser `../js/main.min.js`.  
 3. Imagens devem apontar para `../imagens/nome-do-arquivo.ext`.  
 4. Nomes de arquivos e letras maiúsculas/minúsculas são sensíveis em servidores UNIX — verifique `imagens.jpeg` vs `Imagens.jpeg`.  
 5. Abra o DevTools (F12) → `Console` para ver erros de JS e `Network` para ver se recursos 404.  
@@ -83,8 +83,8 @@ Abra `http://localhost:8080/html/index.html` (ou a porta mostrada pelo comando).
 ## 🧩 Conteúdo dos arquivos (resumo)
 
 - `html/index.html` — Página principal / estrutura HTML. Deve referenciar o CSS e o JS com `../css/` e `../js/` respectivamente.  
-- `css/ong-style.css` — Estilos principais do projeto (variáveis CSS, responsividade, layout).  
-- `js/main.js` — Script principal: menu mobile, máscaras de formulário, validação rápida, handlers.  
+- `css/ong-style.min.css` — Estilos principais do projeto (variáveis CSS, responsividade, layout).  
+- `js/main.min.js` — Script principal: menu mobile, máscaras de formulário, validação rápida, handlers.  
 - `imagens/imagens.jpeg` — Imagens usadas no site (banners, logotipo ou fotos).
 
 ---
