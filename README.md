@@ -1,113 +1,97 @@
+# ONG Conecta
 
-# ONG Conecta — Frontend (Projeto)
-
-README completo preparado para o repositório **ong-conecta**. Este README foi adaptado à estrutura de pastas que você informou e inclui instruções de uso, referências de caminhos relativos (importantes para o seu `index.html`) e dicas para teste local.
+## Descrição
+O projeto **ONG Conecta** é uma plataforma que tem como objetivo conectar pessoas e organizações que desejam colaborar em ações sociais. A aplicação apresenta páginas institucionais, um cadastro de voluntários/doadores e informações sobre os projetos em andamento.
 
 ---
 
-## 📁 Estrutura de pastas (corrigida)
-Você informou que a estrutura do projeto é a seguinte. Ela deve permanecer assim para que os caminhos relativos funcionem com as páginas HTML atuais:
+## Estrutura do Projeto
 
 ```
 ong-conecta/
 ├── html/
-│   └── index.html
-│   └── projetos.html
+│   ├── index.html
+│   ├── projetos.html
 │   └── cadastro.html
 ├── css/
+│   ├── ong-style.css
 │   └── ong-style.min.css
+├── js/
+│   ├── main.js
+│   └── main.min.js
 ├── imagens/
-        (arquivos de imagem)
-└── js/
-    └── main.min.js
+│   (arquivos de imagem)
+│
+├── html-otimizado/
+│   ├── index.html
+│   ├── projetos.html
+│   └── cadastro.html
 ```
 
-## 🧭 Referências de caminho (exemplos para `<head>` e `<body>` no `html/index.html`)
+---
 
-No topo do seu `html/index.html` inclua o CSS assim:
-```html
-<link rel="stylesheet" href="../css/ong-style.min.css">
+## Tecnologias Utilizadas
+- **HTML5** para estrutura semântica das páginas  
+- **CSS3** para estilização e responsividade  
+- **JavaScript** puro para interatividade  
+- **Padrões de Acessibilidade** seguindo WCAG 2.1 Nível AA
+
+---
+
+## Acessibilidade (WCAG 2.1 Nível AA)
+- Navegação completa por teclado  
+- Estrutura semântica adequada com landmarks (`<header>`, `<main>`, `<nav>`, `<footer>`)  
+- Contraste mínimo de 4.5:1 para texto normal  
+- Suporte a leitores de tela com atributos ARIA e rótulos descritivos  
+- Versão em alto contraste e modo escuro  
+- Foco visível em todos os elementos interativos
+
+---
+
+## Otimização para Produção
+- Arquivos CSS, JavaScript e HTML **minificados**  
+- **Compressão de imagens** em formato otimizado (usando TinyPNG ou Squoosh)  
+- Estrutura de pastas separada para versões otimizadas  
+- Configuração de cache via meta tags para melhor desempenho
+
+---
+
+## Estrutura Semântica
+As páginas utilizam marcação semântica com:
+- `<header>` para cabeçalho e navegação  
+- `<main>` como região principal do conteúdo  
+- `<section>` e `<article>` para blocos de conteúdo distintos  
+- `<footer>` para informações de rodapé
+
+---
+
+## Navegação e Interatividade
+- Menu acessível com suporte a teclado  
+- Ícone de menu mobile com controle de foco e aria-expanded  
+- Máscaras de entrada para CPF, telefone e CEP  
+- Validação simples de formulário com mensagem de confirmação
+
+---
+
+## Instruções de Uso
+1. Faça o download do repositório e extraia o conteúdo.  
+2. Abra o arquivo `index.html` no navegador.  
+3. Utilize o menu para navegar entre as páginas “Projetos” e “Cadastro”.  
+4. No formulário de cadastro, preencha os campos obrigatórios e envie as informações.  
+
+---
+
+## Deploy
+As versões minificadas e otimizadas devem ser utilizadas para publicação:
 ```
-
-No final do `body` inclua o JavaScript assim:
-```html
-<script src="../js/main.min.js"></script>
+dist/html/
+dist/css/
+dist/js/
+imagens-otimizadas/
 ```
-
-Para imagens (por exemplo dentro de `html/index.html`):
-```html
-<img src="../imagens/imagens.jpeg" alt="Descrição da imagem">
-```
-
-Esses caminhos são relativos ao local do HTML (`html/`), por isso o `..` para subir ao diretório raiz do projeto e acessar `css/`, `js/` e `imagens/`.
+Essas versões garantem melhor desempenho e carregamento em ambiente de produção.
 
 ---
 
-## 🚀 Como abrir e testar localmente
-
-### Opção 1 — Abrir diretamente (método simples)
-1. No sistema de arquivos, abra `ong-conecta/html/index.html` com um navegador (duplo clique ou `Abrir com...`).
-2. Verifique se o CSS, imagens e JS carregaram corretamente. Se não carregaram, verifique os caminhos usando a ferramenta DevTools (Console / Network).
-
-### Opção 2 — Usar servidor local (recomendado para rotas, CORS e recursos)
-Recomendado: instalar a extensão **Live Server** no VS Code ou usar um pequeno servidor HTTP. Abaixo há duas opções via terminal.
-
-#### Python 3 (método rápido)
-Abra o terminal no diretório `ong-conecta` e rode:
-```bash
-# a maioria das máquinas com Python 3 usa:
-python -m http.server 8000
-```
-Depois abra no navegador: `http://localhost:8000/html/index.html`
-
-#### Node (http-server)
-Se tiver Node.js instalado:
-```bash
-npm install -g http-server
-http-server -c-1
-```
-Abra `http://localhost:8080/html/index.html` (ou a porta mostrada pelo comando).
-
----
-
-## ✅ Checklist de verificação (se algo não carregar)
-
-1. Caminho do CSS no `<head>` deve ser `../css/ong-style.min.css` (relativo ao `html/`).  
-2. Caminho do JS antes de `</body>` deve ser `../js/main.min.js`.  
-3. Imagens devem apontar para `../imagens/nome-do-arquivo.ext`.  
-4. Nomes de arquivos e letras maiúsculas/minúsculas são sensíveis em servidores UNIX — verifique `imagens.jpeg` vs `Imagens.jpeg`.  
-5. Abra o DevTools (F12) → `Console` para ver erros de JS e `Network` para ver se recursos 404.  
-
----
-
-## 🧩 Conteúdo dos arquivos (resumo)
-
-- `html/index.html` — Página principal / estrutura HTML. Deve referenciar o CSS e o JS com `../css/` e `../js/` respectivamente.  
-- `css/ong-style.min.css` — Estilos principais do projeto (variáveis CSS, responsividade, layout).  
-- `js/main.min.js` — Script principal: menu mobile, máscaras de formulário, validação rápida, handlers.  
-- `imagens/imagens.jpeg` — Imagens usadas no site (banners, logotipo ou fotos).
-
----
-
-## 🛠️ Sugestões de melhoria (rápido)
-- Adote nomes mais específicos para as imagens (ex.: `logo.png`, `hero.jpg`) ao invés de `imagens.jpeg` — facilita manutenção.  
-- Separar imagens por finalidade: `imagens/logo/`, `imagens/banners/` se o projeto crescer.  
-- Criar `html/projetos.html` e `html/cadastro.html` com os mesmos padrões de caminhos.  
-- Usar `<meta name="theme-color">` e tags Open Graph para melhor integração social.
-
----
-
-## 📄 Licença
-Este projeto pode ser distribuído sob a licença **MIT** por padrão (se quiser, eu incluo um arquivo `LICENSE` com o texto).
-
----
-
-## 🤝 Contato / Créditos
-Desenvolvido para o propósito da ONG Conecta. Para ajustes, me avise quais páginas adicionais (ex.: `cadastro.html`, `projetos.html`) você tem na pasta `html/` que eu ajusto os caminhos e o conteúdo.
-
----
-
-### Versão do README
-- Gerado: 2025-11-03
-
----
+## Licença
+Este projeto está licenciado sob a licença **MIT**.
