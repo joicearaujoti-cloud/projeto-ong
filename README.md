@@ -17,6 +17,7 @@ ong-conecta/
 ├── css/
 │   └── ong-style.css
 ├── imagens/
+        (arquivos de imagem)
 └── js/
     └── main.js
 ```

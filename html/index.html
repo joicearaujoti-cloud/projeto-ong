@@ -5,70 +5,93 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ONG Conecta - Início</title>
   <link rel="stylesheet" href="../css/ong-style.css">
+
+  <!-- Metadados de acessibilidade -->
+  <meta name="description" content="ONG Conecta - Conectamos pessoas e projetos sociais para promover transformação no Brasil.">
 </head>
 <body>
-<header class="site-header">
-  <div class="container">
-    <div class="header-inner">
-      <div class="brand">
-        <img src="../imagens/ongconecta.png" alt="Logo ONG Conecta">
-        <h1>ONG Conecta</h1>
+  <!-- Link de pular para o conteúdo principal -->
+  <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo</a>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="header-inner">
+        <div class="brand">
+          <img src="../imagens/ongconecta.png" alt="Logo da ONG Conecta" width="80" height="80">
+          <h1>ONG Conecta</h1>
+        </div>
+
+        <nav role="navigation" aria-label="Menu principal">
+          <ul id="menu-principal">
+            <li><a href="index.html" aria-current="page">Início</a></li>
+            <li><a href="projetos.html">Projetos</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+          </ul>
+
+          <button
+            class="hamburger"
+            aria-label="Abrir menu de navegação"
+            aria-controls="menu-principal"
+            aria-expanded="false"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </nav>
+
+        <div class="mobile-menu" id="menu-mobile"></div>
       </div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Início</a></li>
-          <li><a href="projetos.html">Projetos</a></li>
-          <li><a href="cadastro.html">Cadastro</a></li>
-        </ul>
-        <div class="hamburger"><span></span><span></span><span></span></div>
-      </nav>
-      <div class="mobile-menu"></div>
     </div>
-  </div>
-</header>
+  </header>
 
-<main>
-  <section class="hero container">
-    <div>
-      <h1>Fortalecendo ONGs e Projetos Sociais</h1>
-      <p>Conectamos pessoas e projetos para promover transformação social no Brasil.</p>
+  <main id="conteudo-principal" role="main" tabindex="0">
+    <section class="hero container" aria-labelledby="titulo-hero">
+      <div>
+        <h2 id="titulo-hero">Fortalecendo ONGs e Projetos Sociais</h2>
+        <p>Conectamos pessoas e projetos para promover transformação social no Brasil.</p>
+      </div>
+      <div>
+        <img src="../imagens/arranjo-de-dia-de-educacao.jpg" alt="Equipe da ONG Conecta reunida durante atividade educacional" width="500" height="300">
+      </div>
+    </section>
+
+    <section class="container mt-24" aria-labelledby="titulo-missao">
+      <h2 id="titulo-missao">Missão, Visão e Valores</h2>
+      <div class="grid">
+        <article class="card col-4" aria-labelledby="titulo-missao-card">
+          <h3 id="titulo-missao-card" class="card-title">Missão</h3>
+          <p>Conectar pessoas e projetos para promover transformação social.</p>
+        </article>
+
+        <article class="card col-4" aria-labelledby="titulo-visao-card">
+          <h3 id="titulo-visao-card" class="card-title">Visão</h3>
+          <p>Ser referência nacional em tecnologia social e engajamento digital.</p>
+        </article>
+
+        <article class="card col-4" aria-labelledby="titulo-valores-card">
+          <h3 id="titulo-valores-card" class="card-title">Valores</h3>
+          <p>Transparência, colaboração, respeito e inovação.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container mt-24" aria-labelledby="titulo-contato">
+      <h2 id="titulo-contato">Contato</h2>
+      <address>
+        <p><strong>Email:</strong> <a href="mailto:contato@ongconecta.org">contato@ongconecta.org</a></p>
+        <p><strong>Telefone:</strong> <a href="tel:+5561999999999">(61) 99999-9999</a></p>
+      </address>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>&copy; 2025 ONG Conecta - Todos os direitos reservados.</p>
     </div>
-    <div>
-      <img src="../imagens/arranjo-de-dia-de-educacao.jpg" alt="Equipe da ONG Conecta">
-    </div>
-  </section>
+  </footer>
 
-  <section class="container mt-24">
-    <h2>Missão, Visão e Valores</h2>
-    <div class="grid">
-      <article class="card col-4">
-        <h3 class="card-title">Missão</h3>
-        <p>Conectar pessoas e projetos para promover transformação social.</p>
-      </article>
-      <article class="card col-4">
-        <h3 class="card-title">Visão</h3>
-        <p>Ser referência nacional em tecnologia social e engajamento digital.</p>
-      </article>
-      <article class="card col-4">
-        <h3 class="card-title">Valores</h3>
-        <p>Transparência, colaboração, respeito e inovação.</p>
-      </article>
-    </div>
-  </section>
+  <!-- Região viva para leitores de tela -->
+  <div id="aria-live" class="sr-only" aria-live="polite"></div>
 
-  <section class="container mt-24">
-    <h2>Contato</h2>
-    <p>Email: contato@ongconecta.org</p>
-    <p>Telefone: (61) 99999-9999</p>
-  </section>
-</main>
-
-<footer class="site-footer">
-  <div class="container">
-    <p>&copy; 2025 ONG Conecta - Todos os direitos reservados</p>
-  </div>
-</footer>
-
-<script src="../js/main.js"></script>
+  <script src="../js/main.js"></script>
 </body>
 </html>

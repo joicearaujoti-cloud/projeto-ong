@@ -1,28 +1,25 @@
 /* ================================
-   SISTEMA DE DESIGN - ONG CONECTA
+   SISTEMA DE DESIGN ACESSÍVEL - ONG CONECTA
+   Compatível com WCAG 2.1 Nível AA
    ================================ */
 
 /* ---------- VARIÁVEIS DE DESIGN ---------- */
 :root {
-  /* Cores principais */
-  --cor-primaria: #004aad;
-  --cor-secundaria: #00bfa6;
-  --cor-terciaria: #f5a623;
+  --cor-primaria: #003b8e;
+  --cor-secundaria: #00a48f;
+  --cor-terciaria: #e28a00;
 
-  /* Cores neutras */
   --cinza-100: #f9f9f9;
   --cinza-200: #e0e0e0;
   --cinza-400: #9e9e9e;
-  --cinza-600: #616161;
-  --cinza-800: #212121;
+  --cinza-600: #555555;
+  --cinza-800: #1c1c1c;
   --branco: #ffffff;
   --preto: #000000;
 
-  /* Tipografia */
   --fonte-principal: "Poppins", Arial, sans-serif;
   --fonte-titulo: "Montserrat", sans-serif;
 
-  /* Tamanhos de fonte */
   --fs-xxs: 12px;
   --fs-xs: 14px;
   --fs-sm: 16px;
@@ -30,7 +27,6 @@
   --fs-lg: 24px;
   --fs-xl: 32px;
 
-  /* Espaçamento modular */
   --esp-1: 8px;
   --esp-2: 16px;
   --esp-3: 24px;
@@ -38,7 +34,6 @@
   --esp-5: 48px;
   --esp-6: 64px;
 
-  /* Sombra e borda */
   --borda-radius: 12px;
   --sombra-card: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -55,7 +50,23 @@ body {
   font-size: var(--fs-sm);
   color: var(--cinza-800);
   background-color: var(--cinza-100);
-  line-height: 1.6;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Link para pular conteúdo */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--cor-secundaria);
+  color: var(--branco);
+  padding: var(--esp-1) var(--esp-2);
+  z-index: 100;
+  transition: top 0.3s;
+}
+.skip-link:focus {
+  top: 10px;
 }
 
 /* Container padrão */
@@ -86,6 +97,7 @@ body {
 
 header img {
   height: 50px;
+  width: auto;
 }
 
 nav ul {
@@ -101,8 +113,10 @@ nav a {
   transition: 0.3s;
 }
 
-nav a:hover {
-  color: var(--cor-secundaria);
+nav a:hover,
+nav a:focus-visible {
+  color: var(--cor-terciaria);
+  text-decoration: underline;
 }
 
 /* Botão de menu (mobile) */
@@ -111,6 +125,8 @@ nav a:hover {
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
+  background: none;
+  border: none;
 }
 
 .hamburger span {
@@ -164,7 +180,8 @@ section h2 {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover {
+.card:hover,
+.card:focus-within {
   transform: translateY(-5px);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
 }
@@ -196,15 +213,13 @@ section h2 {
 }
 
 .badge-success {
-  background-color: #00bfa6;
+  background-color: #00897b;
 }
-
 .badge-info {
-  background-color: #007bff;
+  background-color: #005eb8;
 }
-
 .badge-dark {
-  background-color: #333;
+  background-color: #222;
 }
 
 /* ---------- BOTÕES ---------- */
@@ -221,8 +236,12 @@ button,
 }
 
 button:hover,
-.btn:hover {
+.btn:hover,
+button:focus-visible,
+.btn:focus-visible {
   background-color: var(--cor-terciaria);
+  outline: 2px solid var(--cor-terciaria);
+  outline-offset: 2px;
 }
 
 button:disabled {
@@ -267,19 +286,23 @@ select {
   margin-bottom: var(--esp-3);
 }
 
-input:focus,
-select:focus {
-  outline: 2px solid var(--cor-secundaria);
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--cor-secundaria);
+  outline-offset: 2px;
+}
+
+/* ---------- ACESSIBILIDADE VISUAL ---------- */
+.user-is-tabbing a:focus-visible,
+.user-is-tabbing button:focus-visible,
+.user-is-tabbing input:focus-visible {
+  outline: 3px solid var(--cor-terciaria);
+  outline-offset: 3px;
 }
 
 /* ---------- UTILITÁRIOS ---------- */
-.mt-16 {
-  margin-top: 16px;
-}
-
-.mt-24 {
-  margin-top: 24px;
-}
+.mt-16 { margin-top: 16px; }
+.mt-24 { margin-top: 24px; }
 
 /* ---------- FOOTER ---------- */
 .site-footer {
@@ -287,6 +310,46 @@ select:focus {
   color: var(--branco);
   text-align: center;
   padding: var(--esp-3);
+}
+
+/* ---------- MODO ESCURO / ALTO CONTRASTE ---------- */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #0d1117;
+    color: #e6e6e6;
+  }
+
+  .site-header,
+  .site-footer {
+    background-color: #002b6b;
+  }
+
+  .card {
+    background-color: #161b22;
+  }
+
+  input,
+  select {
+    background-color: #1f2630;
+    color: #ffffff;
+    border-color: #333;
+  }
+
+  button,
+  .btn {
+    background-color: var(--cor-secundaria);
+    color: var(--branco);
+  }
+}
+
+/* Classe opcional manual */
+.modo-alto-contraste {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+.modo-alto-contraste a {
+  color: #ffff00 !important;
 }
 
 /* ---------- RESPONSIVIDADE ---------- */

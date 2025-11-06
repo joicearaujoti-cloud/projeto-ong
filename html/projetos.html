@@ -4,68 +4,92 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ONG Conecta - Projetos</title>
+  <meta name="description" content="Conheça os projetos sociais da ONG Conecta e saiba como participar ou contribuir.">
   <link rel="stylesheet" href="../css/ong-style.css">
 </head>
+
 <body>
-<header class="site-header">
-  <div class="container">
-    <div class="header-inner">
-      <div class="brand">
-        <img src="../imagens/ongconecta.png" alt="Logo ONG Conecta">
-        <h1>ONG Conecta</h1>
+  <!-- Link de pular direto para o conteúdo -->
+  <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="header-inner">
+        <div class="brand">
+          <img src="../imagens/ongconecta.png" alt="Logo da ONG Conecta" width="80" height="80">
+          <h1>ONG Conecta</h1>
+        </div>
+
+        <nav role="navigation" aria-label="Menu principal">
+          <ul id="menu-principal">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="projetos.html" aria-current="page">Projetos</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+          </ul>
+
+          <button
+            class="hamburger"
+            aria-label="Abrir menu de navegação"
+            aria-controls="menu-principal"
+            aria-expanded="false"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </nav>
+
+        <div class="mobile-menu" id="menu-mobile"></div>
       </div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Início</a></li>
-          <li><a href="projetos.html">Projetos</a></li>
-          <li><a href="cadastro.html">Cadastro</a></li>
-        </ul>
-        <div class="hamburger"><span></span><span></span><span></span></div>
-      </nav>
-      <div class="mobile-menu"></div>
     </div>
-  </div>
-</header>
+  </header>
 
-<main>
-  <section class="container mt-24">
-    <h1>Projetos Sociais</h1>
-    <p>Descubra como participar do voluntariado e apoiar nossos projetos.</p>
-    <div class="cards mt-16">
-      <article class="card">
-        <img src="../imagens/educaçao.jpg" alt="Voluntariado">
-        <div class="card-content">
-          <h3 class="card-title">Voluntariado</h3>
-          <p>Participe das atividades e ajude a transformar vidas.</p>
-          <span class="badge badge-success">Aberto</span>
-        </div>
-      </article>
-      <article class="card">
-        <img src="../imagens/maos.jpg" alt="Projetos em execução">
-        <div class="card-content">
-          <h3 class="card-title">Projetos em Execução</h3>
-          <p>Veja os resultados e impactos dos projetos apoiados.</p>
-          <span class="badge badge-info">Em andamento</span>
-        </div>
-      </article>
-      <article class="card">
-        <img src="../imagens/solidariedaden.jfif" alt="Doações">
-        <div class="card-content">
-          <h3 class="card-title">Doações</h3>
-          <p>Contribua com doações e ajude a manter os projetos ativos.</p>
-          <span class="badge badge-dark">Disponível</span>
-        </div>
-      </article>
+  <main id="conteudo-principal" role="main" tabindex="0">
+    <section class="container mt-24" aria-labelledby="titulo-projetos">
+      <h2 id="titulo-projetos">Projetos Sociais</h2>
+      <p>Descubra como participar do voluntariado e apoiar nossos projetos.</p>
+
+      <div class="cards mt-16" role="list">
+        <!-- CARD 1 -->
+        <article class="card" role="listitem">
+          <img src="../imagens/educaçao.jpg" alt="Pessoa ajudando crianças em um projeto educacional">
+          <div class="card-content">
+            <h3 class="card-title">Voluntariado</h3>
+            <p>Participe das atividades e ajude a transformar vidas.</p>
+            <span class="badge badge-success" aria-label="Projeto com inscrições abertas">Aberto</span>
+          </div>
+        </article>
+
+        <!-- CARD 2 -->
+        <article class="card" role="listitem">
+          <img src="../imagens/maos.jpg" alt="Mãos unidas representando cooperação em projeto comunitário">
+          <div class="card-content">
+            <h3 class="card-title">Projetos em Execução</h3>
+            <p>Veja os resultados e impactos dos projetos apoiados.</p>
+            <span class="badge badge-info" aria-label="Projeto em andamento">Em andamento</span>
+          </div>
+        </article>
+
+        <!-- CARD 3 -->
+        <article class="card" role="listitem">
+          <img src="../imagens/solidariedaden.jfif" alt="Caixas de doações e alimentos sendo organizadas por voluntários">
+          <div class="card-content">
+            <h3 class="card-title">Doações</h3>
+            <p>Contribua com doações e ajude a manter os projetos ativos.</p>
+            <span class="badge badge-dark" aria-label="Campanha de doações disponível">Disponível</span>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>&copy; 2025 ONG Conecta - Todos os direitos reservados.</p>
     </div>
-  </section>
-</main>
+  </footer>
 
-<footer class="site-footer">
-  <div class="container">
-    <p>&copy; 2025 ONG Conecta - Todos os direitos reservados</p>
-  </div>
-</footer>
+  <!-- Região viva para mensagens dinâmicas -->
+  <div id="aria-live" class="sr-only" aria-live="polite"></div>
 
-<script src="../js/main.js"></script>
+  <script src="../js/main.js"></script>
 </body>
 </html>
